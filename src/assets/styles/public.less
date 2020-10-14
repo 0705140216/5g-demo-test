@@ -1,0 +1,31 @@
+// 隐藏滚动条 添加此类名有效
+.scrollbar-hide {
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #e8eaec;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
+
+// 自定义滚动条样式
+* {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: rgba(51, 51, 51, 0.3);
+    &:active {
+      background-color: rgba(51, 51, 51, 0.2);
+    }
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background: transparent;
+  }
+}
