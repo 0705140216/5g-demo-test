@@ -2,7 +2,7 @@
   "name": "SickLeave",
   "version": "1.0.0",
   "private": true,
-  "description": "学生健康管理应用请假因病缺课",
+  "description": "5g测试专用",
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",

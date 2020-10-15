@@ -2,9 +2,6 @@ import { BasicLayout, UserLayout } from '@/layouts'
 
 /* Router Modules */
 import home from './modules/home'
-import approve from './modules/approve'
-import absent from './modules/absent'
-import illLeave from './modules/illLeave'
 
 // 开发环境路由
 import template from './modules/template'
@@ -22,10 +19,10 @@ import template from './modules/template'
   }
  **/
 
-const asyncRoutes = [home, approve, absent, illLeave]
+const asyncRoutes = [home]
 
 // 开发环境路由
-process.env.NODE_ENV === 'development' && asyncRoutes.push(template)
+// process.env.NODE_ENV === 'development' && asyncRoutes.push(template)
 
 /**
  * 动态路由

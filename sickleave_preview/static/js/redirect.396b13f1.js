@@ -1,0 +1,2 @@
+(window["webpackJsonp_SickLeave"]=window["webpackJsonp_SickLeave"]||[]).push([["redirect"],{ef3c:function(e,c,t){"use strict";t.r(c);var n=function(){var e=this,c=e.$createElement,t=e._self._c||c;return t("div")},i=[],a=t("ca00"),u={created:function(){setTimeout((function(){Object(a["e"])("/404")}),2e3)}},r=u,o=t("9ca4"),l=Object(o["a"])(r,n,i,!1,null,null,null);c["default"]=l.exports}}]);
+//# sourceMappingURL=redirect.396b13f1.js.map

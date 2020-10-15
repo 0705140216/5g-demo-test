@@ -1,12 +1,12 @@
 .DS_Store
 node_modules
 /dist
-/sickleave_dist
-/sickleave_preview
-/sickleave_test
-/sickleave_dist.*
-/sickleave_preview.*
-/sickleave_test.*
+/5g_dist
+/5g_preview
+/5g_test
+/5g_dist.*
+/5g_preview.*
+/5g_test.*
 
 # local env files
 .env.local

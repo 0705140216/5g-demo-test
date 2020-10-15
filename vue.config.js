@@ -3,11 +3,11 @@ const { IgnorePlugin } = require('webpack')
 const resolve = dir => require('path').join(__dirname, dir)
 
 const isProd = process.env.NODE_ENV === 'production'
-const title = '请假因病缺课' // page title
-const port = 6503 // dev port
+const title = '5g测试专用' // page title
+const port = 9999 // dev port
 
 module.exports = {
-  publicPath: isProd ? '/sickleave/' : '/',
+  publicPath: '/',
   outputDir: process.env.outputDir,
   assetsDir: 'static',
   filenameHashing: true,
@@ -120,6 +120,6 @@ module.exports = {
     headers: {
       'Access-Control-Allow-Origin': '*'
     },
-    proxy: 'http://192.168.1.143:8888'
+    proxy: 'http://192.168.1.171:8088'
   }
 }
