@@ -59,7 +59,7 @@ service.interceptors.request.use(
  * 2、需重定向的code列表
  */
 // const successCodes = ['200']
-const ridrectCodes = ['600', '601', '605', '612', '614', '616']
+// const ridrectCodes = ['600', '601', '605', '612', '614', '616']
 
 // response interceptor
 service.interceptors.response.use(response => {
@@ -68,38 +68,47 @@ service.interceptors.response.use(response => {
   // 在请求完成后，自动移出队列
   setTimeout(clearPending, 0, config)
 
-  if (data.success) {
+  if (data.code == 200) {
     return data
   } else {
-    if (ridrectCodes.includes(data.code)) {
-      const token = storage.get(ACCESS_TOKEN)
-
-      token &&
-        store.dispatch('user/Logout').then(() => {
-          setTimeout(() => {
-            window.location.reload()
-          }, 1500)
-        })
-    }
-
-    // 当用户权限发生了变更
-    if (data.code === '602') {
-      store.dispatch('UpdatePermissions')
-    }
-
-    // 应用权限变更时
-    if (data.code === '617') {
-      routerGo('/apps') // 返回主应用
-      STORE.store?.dispatch('UpdatePermissions') // 更新主应用权限
-    }
-
     notification.error({
       message: '提示',
       description: data?.message || '请求出现错误，请稍后再试'
     })
-
     return Promise.reject(data)
   }
+  // if (data.success) {
+  //   return data
+  // } else {
+  //   if (ridrectCodes.includes(data.code)) {
+  //     const token = storage.get(ACCESS_TOKEN)
+  //
+  //     token &&
+  //       store.dispatch('user/Logout').then(() => {
+  //         setTimeout(() => {
+  //           window.location.reload()
+  //         }, 1500)
+  //       })
+  //   }
+  //
+  //   // 当用户权限发生了变更
+  //   if (data.code === '602') {
+  //     store.dispatch('UpdatePermissions')
+  //   }
+  //
+  //   // 应用权限变更时
+  //   if (data.code === '617') {
+  //     routerGo('/apps') // 返回主应用
+  //     STORE.store?.dispatch('UpdatePermissions') // 更新主应用权限
+  //   }
+  //
+  //   notification.error({
+  //     message: '提示',
+  //     description: data?.message || '请求出现错误，请稍后再试'
+  //   })
+  //
+  //   return Promise.reject(data)
+  // }
 }, httpErrorHandler)
 
 // error回调

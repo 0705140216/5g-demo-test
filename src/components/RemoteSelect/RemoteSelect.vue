@@ -56,6 +56,11 @@ export default {
       default: () => {
         return []
       }
+    },
+    initData: {
+      // 是否初始化调用
+      type: Boolean,
+      default: true
     }
   },
   data() {
@@ -75,8 +80,8 @@ export default {
     }
   },
   created() {
-    this.getSearchList = debounce(this.getSearchList, false)
-    this.getSearchList()
+    this.getSearchList = debounce(this.getSearchList, true)
+    this.initData && this.getSearchList()
   },
   methods: {
     getSearchList(val = '') {
