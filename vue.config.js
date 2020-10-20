@@ -7,7 +7,7 @@ const title = '5g测试专用' // page title
 const port = 9999 // dev port
 
 module.exports = {
-  publicPath: '/',
+  publicPath: './',
   outputDir: process.env.outputDir,
   assetsDir: 'static',
   filenameHashing: true,

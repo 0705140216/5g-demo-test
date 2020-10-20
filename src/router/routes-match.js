@@ -37,28 +37,11 @@ export const asyncRouterMap = [
   },
   {
     path: '*',
-    redirect: '/redirect'
+    redirect: '/home'
   }
 ]
 
 /**
  * 基础路由
  */
-export const constantRouterMap = [
-  {
-    path: '/user',
-    component: UserLayout,
-    redirect: '/user/login',
-    children: [
-      {
-        path: 'login',
-        name: 'login',
-        component: () => import(/* webpackChunkName: "user" */ '@/views/user/login')
-      }
-    ]
-  },
-  {
-    path: '/redirect',
-    component: () => import(/* webpackChunkName: "redirect" */ '@/views/redirect')
-  }
-]
+export const constantRouterMap = []
